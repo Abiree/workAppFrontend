@@ -1,0 +1,13 @@
+<p>My Stats</p>
+
+<div class="stats">
+    <div class="card-info" *ngFor="let stat of stats">
+        <app-stat-card [info]="stat"></app-stat-card>
+    </div>
+    <div class="card-info flex align-items-center gap-3 blue"><p>View My Tasks</p> <i class="pi pi-arrow-right"></i>
+    </div>
+    <div class="card-info flex align-items-center gap-3 blue"><p>View My Leaves</p><i class="pi pi-arrow-right"></i></div>
+  
+
+</div>
+

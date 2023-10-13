@@ -1,0 +1,7 @@
+<div class="flex justify-content-between">
+    <p>Work Hours</p>
+    
+<p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+</div>
+
+<app-vertical-bar [data]="data" [options]="options"></app-vertical-bar>

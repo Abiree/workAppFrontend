@@ -1,0 +1,27 @@
+<div class="nav">
+
+    <div class="logo p-4">
+        <h1>hr</h1>
+    </div>
+
+    <div class="icons">
+        <div class="nav-items flex flex-column gap-3 ">
+            <div [ngClass]="item.active?'item active':'item inactive'" *ngFor="let item of navItems">
+                <p-button [icon]="'pi ' +item.icon" *ngIf="item.icon!='pi-bell'"></p-button>
+                <div class="notif" *ngIf="item.icon=='pi-bell'">
+                    <i class="pi pi-bell" pBadge value="2" ></i>
+                </div>
+
+            </div>
+        </div>
+    
+    
+        <div class="logout">
+            <i class="pi pi-sign-out" style="transform: rotate(180deg);font-size: 1.4rem;"></i>
+        </div>
+    </div>
+    
+
+
+    
+</div>

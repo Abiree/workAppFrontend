@@ -1,0 +1,65 @@
+@import "../../../fontcolors";
+
+.nav{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    max-width: 5rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+    height: 100%;
+    h1{
+        margin: unset;
+        color: $blue;
+    }
+
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 7.5rem);
+    align-items: center;
+    width: 5rem;
+    .notif{
+        text-align: center;
+        background: $white;
+        color: $grey;
+        width: 3rem;
+        padding: 0.75rem 0;
+    }
+}
+
+.logout{
+    padding-bottom: 1rem;
+    .pi-sign-out{
+        color: $red;
+    }
+}
+
+::ng-deep{
+    .nav-items{
+        .active{
+            .p-button{
+                background-color: $blue;
+                border: 1px solid $blue;
+            }
+        }
+
+        .inactive{
+            .p-button{
+                background-color: $white;
+                border: 1px solid $white;
+                color: $grey;
+            }
+        }
+    }
+
+
+    .p-badge {
+        background:$blue;
+        font-size: 0.5rem;
+        font-weight: 700;
+        min-width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+    }
+}

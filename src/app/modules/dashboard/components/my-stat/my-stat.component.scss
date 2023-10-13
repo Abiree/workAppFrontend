@@ -1,0 +1,56 @@
+@import "../../../../../fontcolors";
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    @media screen and (max-width:650px) {
+        grid-template-columns: repeat(1, 1fr);
+
+        
+    }
+}
+
+.blue{
+    color: $blue;
+}
+
+
+::ng-deep{
+    .card-info{
+
+        &:nth-child(1),&:nth-child(3){
+            border-right: 1px $white solid;
+            margin-left: 1.5rem;
+           padding-right: 1.5rem;
+        }
+        &:nth-child(1),&:nth-child(2){
+            border-bottom: 1px $white solid;
+        }
+
+      
+        &:nth-child(2),&:nth-child(4){
+            margin-right: 1.5rem;
+           padding-left: 1.5rem;
+        }
+        &:nth-child(5),&:nth-child(6){
+            padding-left: 3rem !important;
+            background-color: rgb(242 243 247 / 18%);
+        }
+
+        &:nth-child(5){
+            border-right: 1px $white solid;
+            padding: 1rem;
+        }
+
+
+        
+     
+
+         
+    }
+}

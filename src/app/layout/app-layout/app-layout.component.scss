@@ -1,0 +1,11 @@
+@import '../../../fontcolors';
+
+.content{
+    background-color: $white;
+    width: calc(100vw - 5rem);
+}
+
+.heightvh{
+    height: 100%;
+    min-height: 100vh;
+}

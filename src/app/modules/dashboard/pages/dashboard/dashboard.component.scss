@@ -1,0 +1,36 @@
+@import '../../../../../fontcolors';
+
+.page{
+    h2{
+        border-bottom: 1px solid $grey;
+        margin-top: unset;
+        line-height: 4rem;
+        padding-top: 0.75rem !important;
+    }
+
+    .item-stat,.item-work{
+        width: 50%;
+    }
+
+    .item-work{
+        width: 50%;
+        max-width: 40rem;
+        margin-right: 3rem;
+    }
+
+    @media screen and (max-width:1100px) {
+        .items-stat-work{
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .item-work{
+            width: unset;
+            margin-right: 3rem;
+            max-width: fit-content;
+            max-width: unset;
+        }
+
+        
+    }
+}
