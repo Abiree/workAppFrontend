@@ -1,0 +1,63 @@
+@import "../../../../../_fontcolors.scss";
+
+
+form{
+    width: 90%;
+    max-width: 400px;
+}
+
+.line{
+    background: black;
+    height: 1px;
+    width: 100%;
+    margin: auto 0rem;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+    color:$blue;
+}
+
+.login{
+    color: $blue;
+    text-decoration: none;
+}
+
+
+.label-color{
+    color:$blue;
+}
+
+
+::ng-deep{
+
+    .p-password{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .p-inputtext{
+        width: 100%;
+    }
+
+    p-progressspinner{
+        width: 100%;
+    }
+
+    small{
+        font-size: small;
+    }
+
+.p-button{
+    width: 100%;
+    min-height: 3rem;
+}
+
+.p-button.p-button-outlined {
+    color: black;
+    border: 1px solid $grey;
+}
+}
+
+
+

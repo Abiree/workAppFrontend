@@ -1,13 +1,11 @@
 export enum ApiPaths {
-    HomePage='/home',
+    HomePage='/dashboard',
     ResetPage='/auth/reset-password',
-    Categorie ='/Category/GetAllCategories',
     City='/cities',
     Users='/users',
-    SignIn='/Authentication/Login',
-    SignUp='/Authentication/Register',
-    ConfirmEmail='/Authentication/ConfirmEmail',
+    SignIn='/api/authentication/login',
+    SignUp='/api/authentication/register',
     CurrentUser='/currentUser',
-    ForgetPassword='/Authentication/ForgetPassword',
-    ResetPassword='/Authentication/ResetPassword'
+    ForgetPassword='/api/authentication/ForgetPassword',
+    ResetPassword='/api/authentication/ResetPassword'
  }

@@ -1,0 +1,13 @@
+<div class="stats flex justify-content-between flex-wrap pt-3">
+    <p class="dark-title">Team Stats</p>
+    <div class="flex align-items-center gap-2">
+        <p>Today (17 Apr)</p>
+        <p><</p>
+        <p>></p>
+        <p-dropdown [options]="days" [(ngModel)]="selectedDay" optionLabel="name"></p-dropdown>
+    </div>
+</div>
+
+<div class="team-state">
+    <app-stat-card [info]="stat" *ngFor="let stat of stats" class="team-state-items"></app-stat-card>
+</div>

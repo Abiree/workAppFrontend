@@ -1,0 +1,51 @@
+@import "../../../../../fontcolors";
+
+.container-child{
+    margin: 0px;
+}
+
+form{
+    width: 90%;
+    max-width: 400px;
+}
+
+
+.btn-redirect{
+    width: unset !important;
+}
+
+
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+    color:$blue;
+}
+
+.login{
+    color: $blue;
+    text-decoration: none;
+}
+
+
+.label-color{
+    color:$blue;
+}
+
+
+::ng-deep{
+.p-button{
+    width: 100%;
+    min-height: 3rem;
+}
+.p-inputtext{
+    width: 100%;
+}
+
+.p-password{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+}
+
+
+

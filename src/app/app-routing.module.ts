@@ -1,20 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guard/auth.guard';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 
-const routes: Routes = [ {
-  path: '',
-  component: AppLayoutComponent,
-  children: [
-  {path: 'dashboard',loadChildren: () =>import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
-  // {path: 'services',loadChildren: () =>import('./modules/service/service.module').then(m => m.ServiceModule) },
-  // {path: 'auth',loadChildren: () =>import('./modules/auth/auth.module').then(m => m.AuthModule)},
-  // { path: '', redirectTo: '/home', pathMatch: 'full' }
-  ]
-  },];
+const routes: Routes = [
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('./modules/dashboard/dashboard.module').then(
+            (m) => m.DashboardModule
+          ),
+      },
+      {
+        path: 'team',
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('./modules/team/team.module').then((m) => m.TeamModule),
+      },
+      {
+        path: 'auth',
+        // canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('./modules/auth/auth.module').then((m) => m.AuthModule),
+      },
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

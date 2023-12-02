@@ -1,0 +1,70 @@
+<p-toast></p-toast>
+
+<div class="flex align-items-center justify-content-center flex-column mt-5">
+
+    <div class="title mb-6 mt-6">Login</div>
+    <form   [formGroup]="authForm">
+  
+      <label for="email" class="block label-color font-medium mb-2">Email</label>
+      <input id="email" type="text" placeholder="Enter email" pInputText  formControlName="email" class="w-full mb-3">
+     <div class="mb-3 text-red-600">
+      <small *ngIf="f['email'].errors?.['required'] && f['email']?.touched" class="error">{{Error.email.required}}</small>
+      <small *ngIf="(f['email'].errors?.['email'] ||f['email'].errors?.['pattern']) && f['email']?.touched" class="error">{{Error.email.format}}</small>
+     
+    </div>
+
+
+
+      <label for="password1" class="block label-color font-medium mb-2">Password</label>
+      <p-password   [toggleMask]="true"  [feedback]="false"formControlName="password"></p-password>
+      <!-- <input id="password1" type="password" placeholder="Enter password"  formControlName="password" pInputText class="w-full mb-3"> -->
+      <small *ngIf="(f['password'].errors?.['required'])&&f['password']?.touched" class="text-red-600"
+      >{{Error.password.required}}</small>
+      <small *ngIf="(f['password'].errors?.['minlength'])&&f['password']?.touched" class="error"
+      >{{Error.password.minlength}}</small>
+      <small *ngIf="(f['password'].errors?.['maxlength'])&&f['password']?.touched" class="error"
+      >{{Error.password.maxlength}}</small>
+      <small class="error" *ngIf="(f['password'].errors?.['pattern']&&!f['password'].errors?.['maxlength']&&!f['password'].errors?.['minlength'])&&f['password']?.touched">{{Error.password.format}}</small>
+   
+
+
+
+      <p class="login m-0 text-right cursor-pointer" [routerLink]="['/auth/forgot-password']">Forgot Password ?</p>
+
+      <div class="flex mt-3">
+        <div class="line"></div>
+        <div class="p-3 white-space-nowrap">Or Login With</div>
+        <div class="line"></div>
+      </div>
+
+
+      <div class="mt-3 flex justify-content-center gap-3">
+        <p-button styleClass="p-button-outlined flex  justify-content-center w-10rem">
+          <img alt="logo" src="assets/images/logo/lg_google.png" style="width: 1rem" />
+          <span class="ml-2 font-semibold text-sm">Google</span>
+      </p-button>
+
+      <p-button styleClass="p-button-outlined flex  justify-content-center w-10rem">
+        <img alt="logo" src="assets/images/logo/lg_fb.png" style="width: 2rem" />
+        <span class="ml-2 font-semibold text-sm">Facebook</span>
+    </p-button>
+      </div>
+
+
+
+  <div class="mt-7 mb-7 text-center" >
+    <span class="text-600 font-medium line-height-3 mt-5 mb-5">Don’t have an account ? <a [routerLink]="['/auth/register']" class="login cursor-pointer">Register</a></span>
+  
+  </div>
+    
+     
+  <p-button label={{lable}} class="w-full" (onClick)="login()">
+    <p-progressSpinner styleClass="h-3rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s" *ngIf="isLoading"></p-progressSpinner>
+
+  </p-button>
+  
+    </form>
+   </div>
+  
+  
+  

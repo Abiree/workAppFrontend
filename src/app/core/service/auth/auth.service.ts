@@ -107,7 +107,7 @@ getRole(){
       removeToken2 == null &&
       removeCurrentUser == null  
     ) {
-      this.router.navigate(['home']);
+      this.router.navigate(['auth/login']);
     }
   }
 

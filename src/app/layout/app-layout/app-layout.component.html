@@ -1,7 +1,7 @@
 
 <div class="flex heightvh">
-    <app-nav></app-nav>
-    <div class="content">
+    <app-nav *ngIf="auth"></app-nav>
+    <div [ngClass]="auth?'content':'content-noauth'">
         <router-outlet></router-outlet>
     </div>
 

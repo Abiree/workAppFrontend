@@ -2,12 +2,20 @@
 
 .reminder-card{
     background-color: white;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .pi{
     color: $blue;
+    font-size: 1.3rem;
+}
+
+.warning{
+    color:red !important;
 }
 
 
@@ -20,7 +28,7 @@
     }
 
     .p-button.p-button-outlined{
-        border-color: $grey;
+        border-color: $bordercolor;
         .p-button-label{
             font-weight: 600;
         }

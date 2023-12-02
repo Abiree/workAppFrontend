@@ -9,20 +9,25 @@ import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
+import { FooterComponent } from './layout/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppLayoutComponent,
-    NavComponent
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ButtonModule,
-    BadgeModule
+    BadgeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

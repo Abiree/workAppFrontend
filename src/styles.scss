@@ -37,3 +37,30 @@ html{
 body{
     margin:unset;
 }
+
+//global css
+
+.website{
+    max-width: 70rem;
+    margin: auto;
+}
+
+html{
+    font-size: 10px;
+
+    @media screen and (max-width:1400px) {
+        font-size: 12px;
+    }
+
+    @media screen and (max-width:1700px) and (min-width:1401px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width:2000px) and (min-width:1701px) {
+        font-size: 16px;
+    }
+    
+    @media screen and (min-width:2001px) {
+        font-size: 18px;
+    }
+}

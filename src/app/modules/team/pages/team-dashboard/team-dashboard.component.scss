@@ -1,0 +1,37 @@
+@import "../../../../../fontcolors";
+
+
+
+
+.page{
+    .header{
+        border-bottom: 1px solid $lightgrey;
+        margin-top: 0.75rem;
+        flex-wrap: wrap;
+    }
+  
+    .active{
+        color: $blue;
+        border-bottom: 2px solid $blue;
+    }
+    .inactive{
+        color: $grey;
+    }
+}
+
+.dark-title{
+    color: $grey;
+    font-weight: 600;
+}
+
+.member-card{
+    width: min(34.5rem,calc(100vw - 11rem));
+
+
+    @media screen and (max-width:65rem) {
+
+        width: 100%;
+        
+    }
+}
+

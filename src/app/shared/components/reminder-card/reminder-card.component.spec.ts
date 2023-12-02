@@ -8,9 +8,8 @@ describe('ReminderCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReminderCardComponent ]
-    })
-    .compileComponents();
+      declarations: [ReminderCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ReminderCardComponent);
     component = fixture.componentInstance;

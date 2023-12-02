@@ -1,0 +1,90 @@
+
+<div class="container-child">
+    <p-toast></p-toast>
+    
+     
+     <div class="flex align-items-center justify-content-center flex-column mt-5">
+    
+      <div class="title mb-6 mt-6">Sign Up</div>
+      <form [formGroup]="authForm">
+        <label for="firstname" class="block label-color font-medium mb-2" >FirstName</label>
+        <input id="firstname" type="text" placeholder="Enter firstName" formControlName="firstname" pInputText class="w-full mb-3">
+        <div class="mb-3 text-red-600">
+          <small *ngIf="f['firstname'].errors?.['required'] && f['firstname']?.touched" class="error">{{Error.firstname.required}}</small>
+          <small *ngIf="msg.firstnameMsg!=null">{{msg.firstnameMsg}}</small> 
+        
+        </div>
+    
+        <label for="lastname" class="block label-color font-medium mb-2">LastName</label>
+        <input id="lastname" type="text" placeholder="Enter lastName" formControlName="lastname" pInputText class="w-full mb-3">
+      <div class="mb-3 text-red-600">
+          <small *ngIf="f['lastname'].errors?.['required'] && f['lastname']?.touched" class="error">{{Error.lastname.required}}</small>
+          <small *ngIf="msg.lastnameMsg!=null">{{msg.lastnameMsg}}</small>
+         </div>
+    
+        <label for="email1" class="block label-color font-medium mb-2">Email Address</label>
+        <input id="email1" type="text" placeholder="Enter email" formControlName="email" pInputText class="w-full mb-3">
+        <div class="mb-3 text-red-600">
+          <small *ngIf="f['email'].errors?.['required'] && f['email']?.touched" class="error">{{Error.email.required}}</small>
+          <small *ngIf="(f['email'].errors?.['email'] ||f['email'].errors?.['pattern']) && f['email']?.touched" class="error">{{Error.email.format}}</small>
+          <small *ngIf="msg.emailMsg!=null">{{msg.emailMsg}}</small> 
+        </div>
+        
+        <label for="phone" class="block label-color font-medium mb-2">Phone Number</label>
+        <input id="phone" type="text" placeholder="Enter phone" formControlName="phone" pInputText class="w-full mb-3">
+      <div class="mb-3 text-red-600">
+          <small *ngIf="f['phone'].errors?.['required'] && f['phone']?.touched" class="error">{{Error.phone.required}}</small>
+          <small *ngIf="msg.phoneMsg!=null">{{msg.phoneMsg}}</small> 
+        </div>
+    
+    
+        <label for="password1" class="block label-color font-medium mb-2">Password</label>
+        <p-password  [toggleMask]="true" formControlName="password">
+          <ng-template pTemplate="header">
+            <h6>Pick a password</h6>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">Suggestions</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>Minimum 8 characters</li>
+            </ul>
+        </ng-template>
+        </p-password>
+    
+    
+        <label for="password1" class="block label-color font-medium mb-2">Confirm Password</label>
+        <p-password   [toggleMask]="true"  [feedback]="false"></p-password>
+    
+    <div class="mt-5 mb-5" >
+      <span class="text-600 font-medium line-height-3 mt-5 mb-5">You have an account? <a [routerLink]="['/auth/login']" class="login">Log in now</a></span>
+    
+    </div>
+      
+       
+    <p-button label="Submit" class="w-full" (click)="register()"></p-button>
+    
+      </form>
+     </div>
+    
+    
+    </div>
+    
+    
+    <p-dialog [showHeader]="false" [(visible)]="visible" [position]="'top'" [style]="{ maxWidth: '400px' }">
+      <div class="text-center">
+        <p>
+          Congratulations! 🎉
+          You've successfully registered! 🎈
+          Please check your email inbox for a verification link to complete the registration process. 📧
+          
+          Don't forget to look in your spam folder just in case! If you encounter any issues, please feel free to contact our support team.
+        </p>
+      
+        <p-button icon="pi pi-arrow-circle-right" label="homepage" (onClick)="redirect()" class="btn-redirect"></p-button>
+      </div>
+    
+    </p-dialog>
