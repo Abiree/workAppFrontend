@@ -10,6 +10,7 @@ export class TeamDashboardComponent {
     { name: 'Dashboard', active: true },
     { name: 'Members', active: false },
   ];
+  navSelected = 'Dashboard';
 
   data = {
     text: 'Abire Ghallabi was absent on 01 Dec 2023 without any intimation',
@@ -47,4 +48,12 @@ export class TeamDashboardComponent {
       image: 'assets/images/profil/abire.jpg',
     },
   ];
+
+  nav(item: any) {
+    this.navItems.forEach((e: any) => {
+      e.active = false;
+    });
+    item.active = true;
+    this.navSelected = item.name;
+  }
 }

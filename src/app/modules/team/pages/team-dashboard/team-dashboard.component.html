@@ -2,12 +2,12 @@
     <div class="flex gap-4 align-items-center header">
         <h2>UI/UX Team</h2>
         <div class="flex gap-3 items-stat-work">
-            <p *ngFor="let nav of navItems" [ngClass]="nav.active?'active':'inactive'">{{nav.name}}</p>
+            <p *ngFor="let item of navItems" [ngClass]="item.active?'active':'inactive'" (click)="nav(item)">{{item.name}}</p>
         </div>
     </div>
 
     
-<div class="website">
+<div class="website" *ngIf="navSelected=='Dashboard'">
 <app-team-dashboard-stats></app-team-dashboard-stats>
 
 
@@ -18,8 +18,17 @@
 <div class="pt-5 pb-5 flex flex-wrap justify-content-between gap-3">
     <app-member-card-holiday [cardInfo]="card" *ngFor="let card of cardInfos" class="member-card"></app-member-card-holiday>
 </div>
+
+<div class="team-activity mb-5">
+    <app-team-activity></app-team-activity>
+</div>
   
-</div>    
+</div> 
+
+
+<div  *ngIf="navSelected=='Members'" class="website pt-5">
+    <app-team-member class="members-item"></app-team-member>
+</div>
    
 
 </div>

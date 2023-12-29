@@ -1,0 +1,41 @@
+
+@import "../../../../../fontcolors";
+
+.collapse{
+    
+    padding: 0.7rem;
+   
+    text-align: end;
+    padding-right: 1rem;
+    border-radius: 0.4rem;
+}
+.orange{
+    color: $orange;
+    background: $lightorange;
+}
+
+.red{
+    color: $red;
+    background: $lightred;
+}
+
+.green{
+    color: $green;
+    background: $lightgreen;
+}
+
+
+::ng-deep{
+    .table{
+        .p-button.p-button-outlined,.p-button-outlined:hover,.p-button.p-button-outlined:enabled:hover{
+            border: unset !important;
+            background-color: transparent;
+        }
+
+        .p-button:focus{
+            outline: unset !important;
+            outline-offset: unset;
+            box-shadow: unset !important;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@import "../../../../fontcolors";
+.memberCard{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.desc{
+    background-color: $lightergrey;
+    padding: 0.4rem;
+    width: 23%;
+    border-radius: 0.5rem;
+  
+    h4{
+        margin-bottom: unset;
+    }
+}
+
+
+
+.status{
+    padding: 0.5rem 1.3rem;
+    background-color: $white;
+    border-radius: 4rem;
+    font-size: 0.8rem;
+    height: fit-content;
+    color:$blue;
+    
+}
+
+.red{
+    color: $red;
+    background-color: $lightred;
+}
+
+.green{
+    color: $green;
+    background-color: $lightgreen;
+}
+
+.name{
+    margin: unset;
+    font-weight: 600;
+}
+
+.job{
+    margin: unset;
+    font-size: 0.7rem;
+    color: $grey;
+}
+
+
+.img{
+    img{
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+    }
+}
+
+
+.desc{
+    h4{
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+}
+
+
+.date{
+    p{
+        margin: unset;
+        font-size: 0.9rem;
+        color: $grey;
+    }
+}
+
+
+
+
+
+::ng-deep{
+    .memberCard{
+        .p-button{
+            background-color: $lightblue;
+            color:$blue;
+            border: unset;
+    
+            span{
+                font-weight: 600;
+            }
+        }
+    
+        .pi{
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .p-button-text{
+            background-color: unset;
+        }
+    }
+
+   
+}

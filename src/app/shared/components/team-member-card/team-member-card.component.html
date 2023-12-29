@@ -1,0 +1,39 @@
+<div class="flex justify-content-between"> 
+    <div class="flex gap-2 align-items-center">
+        <div class="flex img">
+            <img [src]="cardInfo.image" [alt]="cardInfo.name">
+        </div>
+        <div class="profil-info">
+            <p class="name">{{cardInfo.name}}</p>
+            <p class="job">{{cardInfo.job}}</p>
+        </div>
+    </div>
+    <div class="flex gap-2">
+        <p [ngClass]="cardInfo.statut=='Present'?' status green':'status red'">{{cardInfo.statut}}</p>
+    </div>
+</div>
+
+
+<div *ngIf="cardInfo.statut=='Absent'" class="mt-3">
+    <p class="job">In Time</p>
+    <h4>{{cardInfo.desc}}</h4>
+</div>
+
+<div class="flex gap-3 justify-content-between mt-3" *ngIf="cardInfo.statut!='Absent'">
+    <div class="desc">
+        <p class="job">In Time</p>
+        <h4>{{cardInfo.intime}}</h4>
+    </div>
+    <div class="desc">
+        <p class="job">Break taken for</p>
+        <h4>{{cardInfo.breaktime}}</h4>
+    </div>
+    <div class="desc">
+        <p class="job">Work Time</p>
+        <h4>{{cardInfo.worktime}}</h4>
+    </div>
+    <div class="desc">
+        <p class="job">Out Time</p>
+        <h4>{{cardInfo.outtime}}</h4>
+    </div>
+</div>

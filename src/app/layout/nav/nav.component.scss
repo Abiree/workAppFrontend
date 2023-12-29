@@ -5,6 +5,7 @@
     max-width: 5rem;
     border-radius: 1.5rem 0 0 1.5rem;
     height: 100%;
+    position: fixed;
     h1{
         margin: unset;
         color: $blue;
@@ -35,7 +36,10 @@
 }
 
 .logout{
-    padding-bottom: 1rem;
+    background-color: $lightred;
+    padding-top: 1rem;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.5rem;
     .pi-sign-out{
         color: $red;
     }

@@ -1,0 +1,160 @@
+
+<div class="table">
+    <p-table
+    #dt
+    [value]="customers"
+    [(selection)]="selectedCustomers"
+    dataKey="id"
+    [rowHover]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="loading"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0"
+    [globalFilterFields]="['idEmp', 'representative.name']"
+>
+
+    <ng-template pTemplate="header">
+        <tr>
+           
+            <th pSortableColumn="name" style="min-width: 9rem">
+                <div class="flex justify-content-between align-items-center">
+                    Emp. ID
+                    <p-sortIcon field="name"></p-sortIcon>
+                </div>
+            </th>
+
+            <th pSortableColumn="representative.name" style="min-width: 12rem">
+                <div class="flex justify-content-between align-items-center">
+                    User
+                    <p-sortIcon field="representative.name"></p-sortIcon>
+                    <p-columnFilter field="representative" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false" class="ml-auto">
+                        <ng-template pTemplate="header">
+                            <div class="px-3 pt-3 pb-0">
+                                <span class="font-bold">Emp. Picker</span>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-multiSelect [ngModel]="value" [options]="representatives" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">
+                                <ng-template let-option pTemplate="item">
+                                    <div class="inline-block vertical-align-middle">
+                                        <img [alt]="option.label" src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{ option.image }}" width="24" class="vertical-align-middle" />
+                                        <span class="ml-1 mt-1">{{ option.name }}</span>
+                                    </div>
+                                </ng-template>
+                            </p-multiSelect>
+                        </ng-template>
+                    </p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="date" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    In Time
+                    <p-sortIcon field="date"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="date" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    Out Time
+                    <p-sortIcon field="date"></p-sortIcon>
+                </div>
+            </th>
+         
+            <th pSortableColumn="balance" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    Work Time
+                    <p-sortIcon field="balance"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="balance" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    Break Time
+                    <p-sortIcon field="balance"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="balance" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    Over Time
+                    <p-sortIcon field="balance"></p-sortIcon>
+                </div>
+            </th>
+            <!-- <th pSortableColumn="status" style="min-width: 8rem">
+                <div class="flex justify-content-between align-items-center">
+                    Tags
+                    <p-sortIcon field="status"></p-sortIcon>
+                    <p-columnFilter field="status" matchMode="equals" display="menu" class="ml-auto">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any">
+                                <ng-template let-option pTemplate="item">
+                                    <p-tag [value]="option.label" [severity]="getSeverity(option.label)"></p-tag>
+                                </ng-template>
+                            </p-dropdown>
+                        </ng-template>
+                    </p-columnFilter>
+                </div>
+            </th> -->
+          
+            <th style="width: 5rem"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+        <tr class="p-selectable-row">
+          
+            <td>
+                <span class="p-column-title">Emp. ID</span>
+                {{ customer.idEmp }}
+            </td>
+          
+            <td>
+                <span class="p-column-title">User</span>
+                <img [alt]="customer.representative.name" [src]="customer.representative.image" width="32" style="vertical-align: middle;border-radius: 50%;" />
+                <span class="ml-1 vertical-align-middle">{{ customer.representative.name }}</span>
+            </td>
+            <td *ngIf="!customer.absent&&!customer.leave">
+                <span class="p-column-title">In Time</span>
+                {{ customer.intime }}
+            </td>
+            <td *ngIf="!customer.absent&&!customer.leave">
+                <span class="p-column-title">Out Time</span>
+                {{ customer.outime  }}
+            </td>
+            <td *ngIf="!customer.absent&&!customer.leave">
+                <span class="p-column-title">Work Time</span>
+                {{ customer.worktime  }}
+            </td>
+            <td *ngIf="!customer.absent&&!customer.leave">
+                <span class="p-column-title">Break Time</span>
+                {{ customer.breaktime  }}
+            </td>
+            <td *ngIf="!customer.absent&&!customer.leave">
+                <span class="p-column-title">Over Time</span>
+                {{ customer.overtime  }}
+            </td>
+            
+            <td *ngIf="customer.absent||customer.leave" colspan="5">
+                <div class="collapse" [ngClass]="{'collapse':true, 'red': customer.absent, 'orange':customer.leave&&!customer.accepted,'green':customer.leave&&customer.accepted}">
+                <span class="p-column-title"></span>
+                {{customer.absent?'Absent ('+customer.msg+')':'Leave ('+customer.msg+')'}}
+            </div>
+
+            </td>
+  
+            <!-- <td>
+                <span class="p-column-title">Tags</span>
+                <p-tag [value]="customer.status" [severity]="getSeverity(customer.status)"></p-tag>
+            </td> -->
+           
+            <td style="text-align: center">
+                <p-button  styleClass="p-button-outlined" icon="pi pi-ellipsis-h"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8">No data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

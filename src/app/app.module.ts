@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
@@ -17,7 +16,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     AppComponent,
     AppLayoutComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,9 +24,9 @@ import { FooterComponent } from './layout/footer/footer.component';
     AppRoutingModule,
     ButtonModule,
     BadgeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [MessageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

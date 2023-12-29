@@ -23,8 +23,11 @@
 
 
 ::ng-deep{
-    .p-dropdown{
-        background: transparent;
-        border: unset;
+    .stats{
+        .p-dropdown{
+            background: transparent;
+            border: unset;
+        }
     }
+   
 }
