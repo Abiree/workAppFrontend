@@ -29,35 +29,38 @@ form{
     color:$blue;
 }
 
+:host{
+    ::ng-deep{
+    
 
-::ng-deep{
-
-    .p-password{
+        .p-password{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .p-inputtext{
+            width: 100%;
+        }
+    
+        p-progressspinner{
+            width: 100%;
+        }
+    
+        small{
+            font-size: small;
+        }
+    
+    .p-button{
         width: 100%;
-        margin-bottom: 1rem;
+        min-height: 3rem;
     }
-    .p-inputtext{
-        width: 100%;
+    
+    .p-button.p-button-outlined {
+        color: black;
+        border: 1px solid $grey;
     }
-
-    p-progressspinner{
-        width: 100%;
     }
-
-    small{
-        font-size: small;
-    }
-
-.p-button{
-    width: 100%;
-    min-height: 3rem;
 }
 
-.p-button.p-button-outlined {
-    color: black;
-    border: 1px solid $grey;
-}
-}
 
 
 

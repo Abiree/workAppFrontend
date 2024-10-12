@@ -1,6 +1,6 @@
 <div class="flex justify-content-between"> 
     <div class="flex gap-2 align-items-center">
-        <div class="flex img">
+        <div [ngClass]="page == 'team-member'?'flex img cursor-pointer':'flex img'" (click)="openDetail()">
             <img [src]="cardInfo.image" [alt]="cardInfo.name">
         </div>
         <div class="profil-info">

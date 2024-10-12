@@ -1,0 +1,77 @@
+@import "../../../../../fontcolors";
+
+.header {
+  border-bottom: 1px solid $lightgrey;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.img {
+  img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+  }
+}
+
+.profil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.active {
+  color: $blue;
+  border-bottom: 2px solid $blue;
+  cursor: pointer;
+  line-height: 3rem;
+}
+.inactive {
+  color: $grey;
+  cursor: pointer;
+  line-height: 3rem;
+}
+
+.bg-nav {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 0.5rem;
+  p {
+    margin-left: 0.4rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0 1rem;
+  }
+}
+
+.card-shadow {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.cards-collection {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.name {
+  margin: unset;
+  font-weight: 600;
+}
+
+.job {
+  margin: unset;
+  font-size: 0.7rem;
+  color: $grey;
+}
+
+:host {
+  ::ng-deep {
+    .p-dropdown {
+      background: transparent;
+      border: unset;
+    }
+  }
+}

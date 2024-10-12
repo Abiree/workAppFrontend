@@ -1,0 +1,57 @@
+<div class="page ml-6 mr-6">
+  <div class="flex gap-4 align-items-center header">
+    <i class="pi pi-arrow-left cursor-pointer" (click)="back()"></i>
+    <h2>UI/UX Team</h2>
+  </div>
+
+  <div class="flex gap-2 align-items-center pt-5">
+    <div class="flex img">
+      <img [src]="cardInfo.image" [alt]="cardInfo.name" />
+    </div>
+    <div class="profil-info">
+      <p class="name">{{ cardInfo.name }}</p>
+      <p class="job">{{ cardInfo.job }}</p>
+    </div>
+  </div>
+
+  <div class="flex mt-5 bg-nav">
+    <p
+      *ngFor="let item of navItems"
+      [ngClass]="item.active ? 'active' : 'inactive'"
+      (click)="nav(item)"
+    >
+      {{ item.name }}
+    </p>
+  </div>
+
+  <div class="flex flex-wrap gap-4 align-items-center">
+    <div>
+      <div class="flex align-items-center gap-2 justify-content-between">
+        <div class="flex">
+          <p>Today (17 Apr)</p>
+          <p><</p>
+          <p>></p>
+        </div>
+        <div>
+          <p-dropdown
+            [options]="days"
+            [(ngModel)]="selectedDay"
+            optionLabel="name"
+          ></p-dropdown>
+        </div>
+      </div>
+      <div class="cards-collection">
+        <div class="card-shadow">
+          <app-stat-card [info]="stat"></app-stat-card>
+        </div>
+        <div>
+          <div class="card-shadow">
+            <app-stat-card [info]="stat"></app-stat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>test</div>
+  </div>
+</div>

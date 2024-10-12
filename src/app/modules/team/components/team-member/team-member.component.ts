@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-team-member',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./team-member.component.scss'],
 })
 export class TeamMemberComponent {
+  @Input()
+  isMemberNavSelected!: boolean;
+
   cardInfos = [
     {
       name: 'Abire Ghallabi',
@@ -20,7 +23,7 @@ export class TeamMemberComponent {
       image: 'assets/images/profil/abire.jpg',
     },
     {
-      name: 'Abire Ghallabi',
+      name: 'Chouaib Eladraoui',
       job: 'Software Engineer',
       statut: 'Absent',
       date: '28 Dec 2023 - 29 Dec 2023',

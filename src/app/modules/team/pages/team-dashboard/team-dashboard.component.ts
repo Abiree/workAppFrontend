@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TeamMembersService } from 'src/app/shared/services/team/team-members.service';
 
 @Component({
   selector: 'app-team-dashboard',
@@ -48,6 +49,14 @@ export class TeamDashboardComponent {
       image: 'assets/images/profil/abire.jpg',
     },
   ];
+
+  constructor(private teamMemberService: TeamMembersService) {}
+  ngOnInit(): void {
+    const bool = this.teamMemberService.getIsMemberNavSelected();
+    if (bool) {
+      this.nav(this.navItems[1]);
+    }
+  }
 
   nav(item: any) {
     this.navItems.forEach((e: any) => {

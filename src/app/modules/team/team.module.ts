@@ -8,6 +8,7 @@ import { TeamDashboardStatsComponent } from './components/team-dashboard-stats/t
 import { TeamActivityComponent } from './components/team-activity/team-activity.component';
 import { TableComponent } from './components/table/table.component';
 import { TeamMemberComponent } from './components/team-member/team-member.component';
+import { TeamMemberDetailsComponent } from './pages/team-member-details/team-member-details.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TeamMemberComponent } from './components/team-member/team-member.compon
     TeamActivityComponent,
     TableComponent,
     TeamMemberComponent,
+    TeamMemberDetailsComponent,
   ],
   imports: [CommonModule, TeamRoutingModule, SharedModule],
 })
